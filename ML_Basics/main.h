@@ -1,8 +1,44 @@
-﻿typedef double f64;
-typedef float f32;
+﻿typedef unsigned char u8;
+typedef unsigned short u16;
+typedef unsigned int u32;
+typedef unsigned long u64;
+typedef unsigned long long u128;
+
+typedef char i8;
+typedef short i16;
 typedef int i32;
 typedef long i64;
 typedef long long i128;
+
+typedef unsigned char f8;
+typedef f8 f8_e4m3;
+typedef f8 f8_e5m2;
+typedef unsigned short f16;
+typedef f16 f16_e5m10;
+typedef f16 f16_e8m7;
+typedef float f32;
+typedef double f64;
+
+typedef f8 bfloat8;
+typedef f16 bfloat16;
+typedef f32 bfloat32;
+
+typedef bfloat16 bf16;
+typedef bfloat32 bf32;
+
+
+typedef struct {
+    u32 low;
+    u32 mid;
+    u32 high; 
+    u8 scale;
+    u8 sign;
+} decimal128;
+
+typedef decimal128 decimal;
+typedef decimal d128;
+
+typedef u64 datetime64;
 
 typedef struct {
     f64 linear_weight;

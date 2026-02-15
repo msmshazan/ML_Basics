@@ -118,7 +118,11 @@ void linear_regression_quadratic_example()
             f64 x = dataset.x_data[i];
             f64 y = dataset.y_data[i];
 
-            f64 y_prediction = (model.quadratic_weight * x * x) + (model.linear_weight * x) + model.bias;
+            f64 y_prediction = 
+                (model.quadratic_weight * x * x) + 
+                (model.linear_weight * x) + 
+                model.bias;
+
             f64 error = y_prediction - y;
 
             loss += error * error;
