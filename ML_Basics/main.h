@@ -26,17 +26,16 @@ typedef f32 bfloat32;
 typedef bfloat16 bf16;
 typedef bfloat32 bf32;
 
-
 typedef struct {
     u32 low;
     u32 mid;
     u32 high; 
     u8 scale;
     u8 sign;
-} decimal128;
+} decimal;
 
-typedef decimal128 decimal;
 typedef decimal d128;
+typedef decimal d96;
 
 typedef u64 datetime64;
 
@@ -82,6 +81,45 @@ typedef struct {
     int* strides;
     double* data;
 } Tensor;
+
+typedef struct {
+    u32* digits;
+    size_t length;
+    int sign;
+} BigInt;
+
+typedef struct {
+    BigInt mantissa;
+    i64 exponent;
+    int sign;
+} BigFloat;
+
+typedef struct {
+    BigInt unscaled;
+    int scale;
+} BigDeciaml;
+
+typedef struct {
+    i64 numerator;
+    i64 denominator;
+} Rational;
+
+typedef struct {
+    i64 whole;
+    i64 numerator;
+    i64 denominator;
+} MixedRational;
+
+typedef struct {
+    BigInt numerator;
+    BigInt denominator;
+} BigRational;
+
+typedef struct {
+    BigInt whole;
+    BigInt numerator;
+    BigInt denominator;
+} MixedRational;
 
 int main();
 
